@@ -11,7 +11,8 @@ You will have to set an rcon password (and enable RCON) in your Minecraft ```ser
 Set up RCON first as stated above and then:
 
 Modify minecraft-vanilla.service so that the WorkingDirectory points to the directory with your minecraft's server.jar
-Modify minecraft-vanilla.service so that YOUR_RCON_PASSWORD is your actual RCON password.
+Modify minecraft-vanilla.service so that ```YOUR_RCON_PASSWORD``` is your actual RCON password.
+Modify minecraft-vanilla.service so that ```User``` and ```Group``` match the user and group you want to run the server as.
 
 Then install the service file with:
 
@@ -34,4 +35,5 @@ sudo systemctl reload-daemon
 
 ### Important notes
 
-This service file is meant to be used with Minecraft vanilla, although Spigot should work.
+This service file is meant to be used with Minecraft vanilla.
+If you are using Spigot, you must use ```minecraft-spigot.service``` instead.
