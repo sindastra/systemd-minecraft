@@ -14,7 +14,7 @@ Group=minecraft
 Type=simple
 
 ExecStart=/usr/bin/java -Djline.terminal=jline.UnsupportedTerminal -Xmx1024M -Xms1024M -jar server.jar nogui
-ExecStop=/usr/local/bin/mcrcon -H 127.0.0.1 -P 25576 -p YOUR_RCON_PASSWORD save-all stop
+ExecStop=/usr/local/bin/mcrcon -H 127.0.0.1 -P 25575 -p YOUR_RCON_PASSWORD save-all stop
 ExecReload=/usr/local/bin/mcrcon -H 127.0.0.1 -p YOUR_RCON_PASSWORD reload
 
 [Install]
