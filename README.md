@@ -48,4 +48,4 @@ This service file is meant to be used with Minecraft vanilla.
 If you are using Spigot, you must use ```minecraft-spigot.service``` instead.
 
 ##### "Minecraft" is a trademark of Mojang Synergies AB
-This project is not affiliated with Minecraft
+##### This project is not affiliated with Minecraft
