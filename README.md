@@ -1,5 +1,9 @@
 # [Unofficial] systemd service file for Minecraft server
 
+Have you been using ```screen``` like a n00b? Or worse, a service file that just starts screen?
+
+Stop that nonsense and use a proper systemd service file instead!
+
 ### RCON
 
 This service file requires you to install mcrcon which you can obtain here: https://github.com/Tiiffi/mcrcon
