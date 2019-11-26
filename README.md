@@ -36,4 +36,5 @@ sudo systemctl reload-daemon
 ### Important notes
 
 This service file is meant to be used with Minecraft vanilla.
+
 If you are using Spigot, you must use ```minecraft-spigot.service``` instead.
