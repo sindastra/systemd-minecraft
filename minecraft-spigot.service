@@ -1,0 +1,21 @@
+[Unit]
+Description=Minecraft Server Spigot
+After=local-fs.target network.target
+
+[Service]
+WorkingDirectory=/home/minecraft/server-spigot
+Restart=always
+RestartSec=5
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=minecraft
+User=minecraft
+Group=minecraft
+Type=simple
+
+ExecStart=/usr/bin/java -Djline.terminal=jline.UnsupportedTerminal -Xms4096M -Xmx4096M -XX:+UseConcMarkSweepGC -jar spigot.jar --nojline
+ExecStop=/usr/local/bin/mcrcon -H 127.0.0.1 -p YOUR_RCON_PASSWORD save-all stop
+ExecReload=/usr/local/bin/mcrcon -H 127.0.0.1 -p YOUR_RCON_PASSWORD reload
+
+[Install]
+WantedBy=multi-user.target
