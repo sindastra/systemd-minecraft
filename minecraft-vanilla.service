@@ -1,7 +1,7 @@
 [Unit]
 Description=Minecraft Server Vanilla
-After=local-fs.target network.target
-Wants=local-fs.target network.target
+After=local-fs.target network.target network-online.target
+Wants=local-fs.target network.target network-online.target
 
 [Service]
 WorkingDirectory=/var/lib/minecraft
