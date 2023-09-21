@@ -1,6 +1,7 @@
 [Unit]
 Description=Minecraft Server Spigot
 After=local-fs.target network.target
+Wants=local-fs.target network.target
 
 [Service]
 WorkingDirectory=/home/minecraft/server-spigot
