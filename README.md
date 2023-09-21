@@ -14,11 +14,21 @@ You will have to set an rcon password (and enable RCON) in your Minecraft ```ser
 
 Set up RCON first as stated above and then:
 
-Modify minecraft-vanilla.service so that ```WorkingDirectory``` points to the directory with your minecraft's server.jar
+```
+useradd -d /var/lib/minecraft -m -r -s /usr/sbin/nologin minecraft
 
-Modify minecraft-vanilla.service so that ```YOUR_RCON_PASSWORD``` is your actual RCON password.
+touch /etc/default/minecraft
+chmod 0600 /etc/default/minecraft
+cat <<EOF | sudo tee /etc/default/minecraft > /dev/null
+RCON_PASSWORD=changeme
+EOF
+```
 
-Modify minecraft-vanilla.service so that ```User``` and ```Group``` match the user and group you want to run the server as.
+Modify /etc/default/minecraft so that ```RCON_PASSWORD``` is your actual RCON password.
+
+Modify minecraft-vanilla.service (if needed) so that ```WorkingDirectory``` points to the directory with your minecraft's server.jar
+
+Modify minecraft-vanilla.service (if needed) so that ```User``` and ```Group``` match the user and group you want to run the server as.
 
 Modify minecraft-vanilla.service (if needed) so that the port of the RCON server in the ```ExecStop``` and ```ExecReload``` lines matches your RCON server port. Usually not needed if only running one Minecraft server.
 

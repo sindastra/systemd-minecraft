@@ -4,6 +4,7 @@ After=local-fs.target remote-fs.target network.target network-online.target
 Wants=local-fs.target remote-fs.target network.target network-online.target
 
 [Service]
+EnvironmentFile=/etc/default/minecraft
 WorkingDirectory=/var/lib/minecraft
 Restart=always
 RestartSec=5
@@ -15,8 +16,8 @@ Group=minecraft
 Type=simple
 
 ExecStart=/usr/bin/java -Djline.terminal=jline.UnsupportedTerminal -Xms4096M -Xmx4096M -XX:+UseConcMarkSweepGC -jar spigot.jar --nojline
-ExecStop=/usr/local/bin/mcrcon -H 127.0.0.1 -P 25575 -p YOUR_RCON_PASSWORD save-all stop
-ExecReload=/usr/local/bin/mcrcon -H 127.0.0.1 -P 25575 -p YOUR_RCON_PASSWORD reload
+ExecStop=/usr/local/bin/mcrcon -H 127.0.0.1 -P 25575 -p $RCON_PASSWORD save-all stop
+ExecReload=/usr/local/bin/mcrcon -H 127.0.0.1 -P 25575 -p $RCON_PASSWORD reload
 
 [Install]
 WantedBy=multi-user.target
