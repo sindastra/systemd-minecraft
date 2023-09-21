@@ -4,7 +4,7 @@ After=local-fs.target network.target
 Wants=local-fs.target network.target
 
 [Service]
-WorkingDirectory=/home/minecraft/server-spigot
+WorkingDirectory=/var/lib/minecraft
 Restart=always
 RestartSec=5
 StandardOutput=syslog
