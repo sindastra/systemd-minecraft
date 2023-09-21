@@ -1,7 +1,7 @@
 [Unit]
 Description=Minecraft Server Spigot
-After=local-fs.target network.target network-online.target
-Wants=local-fs.target network.target network-online.target
+After=local-fs.target remote-fs.target network.target network-online.target
+Wants=local-fs.target remote-fs.target network.target network-online.target
 
 [Service]
 WorkingDirectory=/var/lib/minecraft
